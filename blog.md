@@ -91,7 +91,7 @@ while runner.run(user_id=user_id, session_id=adk_session_id, new_message=new_mes
     print(event.content.parts[0].text, end="") # stream the response to console
 ```
 
-Runners do a lot of work! But the primary takeaway is that runners manage the interactions between our user and our agent, ensuring both sides can comunicate with another with the appropriate context.
+Runners do a lot of work! But the primary takeaway is that runners manage the interactions between our user and our agent, ensuring both sides can communicate with another with the appropriate context.
 
 ### Tools: Extending What Agents Can Do
 One last powerful aspect of ADK that our Agent will use is `tools`. Tools allow agents to interact with the outside world. This could be as simple as calling external systems to gather information, or as complex as triggering real-world actions. ADK allows for both custom and built-in tools.
@@ -157,7 +157,7 @@ Let’s look at how all of this comes together in code. Some snippets are below,
 
 ### 1. Initialization
 
-When the bot starts, we initialize the key components it needs: Discord authentication setup, a data structure to track created channels, and our ADK Agent & SessionService.
+When the bot starts, we initialize the key components it needs: Discord authentication setup, a data structure to track created channels, and our ADK agent and SessionService.
 
 ```python
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
@@ -288,7 +288,7 @@ async def on_message(message):
     # Allow other commands to be processed
     await bot.process_commands(message)
 ```
-After ignoring messages from other bots, the function checks if a message is in a designated AI channel. If so, it sends the content to an AI agent and relays the response. Otherwise, the message is processed for standard commands (e.t., !sidebar, !exit) via the bot.process_commands(message) call.
+After ignoring messages from other bots, the function checks if a message is in a designated AI channel. If so, it sends the content to an AI agent and relays the response. Otherwise, the message is processed for standard commands (i.e. !sidebar, !exit) via the bot.process_commands(message) call.
 
 #### Handling Events: The `!exit` Command
 
